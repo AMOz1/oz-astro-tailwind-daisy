@@ -1,0 +1,152 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <div class="p-8 bg-base-200">
+    <!-- Center container -->
+    <div class="max-w-[900px] mx-auto space-y-8">
+      <!-- Button Sizes Card -->
+      <div class="card max-w-[900px] w-full bg-base-100 card-md shadow-sm mx-auto">
+        <div class="card-body">
+          <div class="flex justify-between items-center mb-4">
+            <h2 class="card-title">Button Sizes</h2>
+            <button class="btn btn-xs" id="copy-btn-1">Copy HTML</button>
+          </div>
+          <div class="flex flex-wrap gap-2 justify-center">
+            <button class="btn btn-xs">Xsmall</button>
+            <button class="btn btn-sm">Small</button>
+            <button class="btn">Medium</button>
+            <button class="btn btn-lg">Large</button>
+            <a href="/button" class="btn btn-xl">Xlarge</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Responsive button -->
+      <div class="card max-w-[900px] w-full bg-base-100 card-md shadow-sm mx-auto">
+        <div class="card-body">
+          <div class="flex justify-between items-center mb-4">
+            <h2 class="card-title">Responsive button</h2>
+            <button class="btn btn-xs" id="copy-btn-2">Copy HTML</button>
+          </div>
+          <div class="flex flex-wrap gap-2 justify-center">
+            <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl">Responsive</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Buttons colors -->
+      <div class="card max-w-[900px] w-full bg-base-100 card-md shadow-sm mx-auto">
+        <div class="card-body">
+          <div class="flex justify-between items-center mb-4">
+            <h2 class="card-title">Button colors</h2>
+            <button class="btn btn-xs" id="copy-btn-3">Copy HTML</button>
+          </div>
+          <div class="flex flex-wrap gap-2 justify-center">
+            <button class="btn btn-neutral">Neutral</button>
+            <button class="btn btn-primary">Primary</button>
+            <button class="btn btn-secondary">Secondary</button>
+            <button class="btn btn-accent">Accent</button>
+            <button class="btn btn-info">Info</button>
+            <button class="btn btn-success">Success</button>
+            <button class="btn btn-warning">Warning</button>
+            <button class="btn btn-error">Error</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Soft buttons -->
+      <div class="card max-w-[900px] w-full bg-base-100 card-md shadow-sm mx-auto">
+        <div class="card-body">
+          <div class="flex justify-between items-center mb-4">
+            <h2 class="card-title">Soft buttons</h2>
+            <button class="btn btn-xs" id="copy-btn-4">Copy HTML</button>
+          </div>
+          <div class="flex flex-wrap gap-2 justify-center">
+            <button class="btn btn-soft">Default</button>
+            <button class="btn btn-soft btn-primary">Primary</button>
+            <button class="btn btn-soft btn-secondary">Secondary</button>
+            <button class="btn btn-soft btn-accent">Accent</button>
+            <button class="btn btn-soft btn-info">Info</button>
+            <button class="btn btn-soft btn-success">Success</button>
+            <button class="btn btn-soft btn-warning">Warning</button>
+            <button class="btn btn-soft btn-error">Error</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Outline buttons -->
+      <div class="card max-w-[900px] w-full bg-base-100 card-md shadow-sm mx-auto">
+        <div class="card-body">
+          <div class="flex justify-between items-center mb-4">
+            <h2 class="card-title">Outline buttons</h2>
+            <button class="btn btn-xs" id="copy-btn-5">Copy HTML</button>
+          </div>
+          <div class="flex flex-wrap gap-2 justify-center">
+            <button class="btn btn-outline">Default</button>
+            <button class="btn btn-outline btn-primary">Primary</button>
+            <button class="btn btn-outline btn-secondary">Secondary</button>
+            <button class="btn btn-outline btn-accent">Accent</button>
+            <button class="btn btn-outline btn-info">Info</button>
+            <button class="btn btn-outline btn-success">Success</button>
+            <button class="btn btn-outline btn-warning">Warning</button>
+            <button class="btn btn-outline btn-error">Error</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Glass buttons -->
+      <div class="card max-w-[900px] w-full bg-base-100 card-md shadow-sm mx-auto">
+        <div class="card-body">
+          <div class="flex justify-between items-center mb-4">
+            <h2 class="card-title">Glass buttons</h2>
+            <button class="btn btn-xs" id="copy-btn-6">Copy HTML</button>
+          </div>
+          <div class="flex flex-wrap gap-2 justify-center">
+            <button class="btn glass">Glass</button>
+            <button class="btn glass btn-primary">Primary</button>
+            <button class="btn glass btn-secondary">Secondary</button>
+            <button class="btn glass btn-accent">Accent</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Button shapes -->
+      <div class="card max-w-[900px] w-full bg-base-100 card-md shadow-sm mx-auto">
+        <div class="card-body">
+          <div class="flex justify-between items-center mb-4">
+            <h2 class="card-title">Button shapes</h2>
+            <button class="btn btn-xs" id="copy-btn-7">Copy HTML</button>
+          </div>
+          <div class="flex flex-wrap gap-2 justify-center">
+            <button class="btn">Default</button>
+            <button class="btn btn-circle">C</button>
+            <button class="btn btn-square">S</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  // Add copy functionality for the HTML buttons
+  document.querySelectorAll('[id^="copy-btn-"]').forEach(button => {
+    button.addEventListener('click', () => {
+      const card = button.closest('.card');
+      const codeBlock = card.querySelector('.flex-wrap').outerHTML;
+      navigator.clipboard.writeText(codeBlock);
+      
+      // Show feedback
+      const originalText = button.textContent;
+      button.textContent = 'Copied!';
+      button.classList.add('btn-success');
+      
+      setTimeout(() => {
+        button.textContent = originalText;
+        button.classList.remove('btn-success');
+      }, 2000);
+    });
+  });
+</script>

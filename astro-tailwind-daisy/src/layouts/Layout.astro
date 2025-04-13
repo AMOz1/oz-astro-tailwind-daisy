@@ -1,0 +1,29 @@
+---
+import '../styles/app.css';
+import ThemeToggle from '../components/ThemeToggle.astro';
+import GlobalStyles from '../components/GlobalStyles.astro';
+
+// Default theme
+const defaultTheme = 'light';
+---
+
+<!doctype html>
+<html lang="en" data-theme={defaultTheme}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro 5 + Tailwind CSS v4 + DaisyUI v5 + Alpine.js</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="fixed top-4 right-4 z-50">
+      <ThemeToggle />
+    </div>
+    <GlobalStyles />
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,137 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark;
+}
+
+@plugin "daisyui/theme";
+
+/* Set Source Sans 3 as the default font for the entire website */
+:root {
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Font weight utility classes */
+.font-source-sans {
+  font-family: "Source Sans 3", system-ui, sans-serif;
+}
+
+.font-source-sans-thin {
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-weight: 200;
+}
+
+.font-source-sans-light {
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-weight: 300;
+}
+
+.font-source-sans-regular {
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-weight: 400;
+}
+
+.font-source-sans-medium {
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-weight: 500;
+}
+
+.font-source-sans-semibold {
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-weight: 600;
+}
+
+.font-source-sans-bold {
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-weight: 700;
+}
+
+.font-source-sans-extrabold {
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-weight: 800;
+}
+
+.font-source-sans-black {
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-weight: 900;
+}
+
+html[data-theme="light"] {
+  --color-base-100: oklch(100% 0 0);
+  --color-base-200: oklch(96.12% 0 0);
+  --color-base-300: oklch(94.31% 0 0);
+  --color-base-400: rgba(0, 0, 0, 0.25);
+  --color-base-content: oklch(27% 0.006 286.033);
+  --color-primary: oklch(49.98% 0.1936 262.48);
+  --color-primary-content: oklch(93.4% 0 0);
+  --color-secondary: oklch(16.1% 0.1116 264.05);
+  --color-secondary-content: oklch(93.4% 0 0);
+  --color-accent: oklch(62.8% 0.2577 29.23);
+  --color-accent-content: oklch(93.4% 0 0);
+  --color-neutral: oklch(16.1% 0.1116 264.05);
+  --color-neutral-content: oklch(93.4% 0 0);
+  --color-info: oklch(90% 0.0482 271.24);
+  --color-info-content: oklch(0% 0 0);
+  --color-success: rgba(0, 0, 0, 0.15);
+  --color-success-content: oklch(0% 0 0);
+  --color-warning: oklch(92.18% 0.0767 82.03);
+  --color-warning-content: oklch(0% 0 0);
+  --color-error: oklch(82.27% 0.0993 19.41);
+  --color-error-content: oklch(0% 0 0);
+  --radius-selector: 0.5rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.25rem;
+  --size-selector: 0.21875rem;
+  --size-field: 0.2rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+  --fontsize: .9rem;
+  --color-icon-subtle-gray: #6C6C6C;
+  --color-neutral-bg-50: rgba(0, 0, 0, 0.07);
+  --color-neutral-bg-100: rgba(0, 0, 0, 0.12);
+  --color-error-text: #D20300;
+  --color-neutral-border-01: rgba(0, 0, 0, 0.15);
+  --color-error-border: #D20300;
+}
+
+html[data-theme="dark"] {
+  --color-base-100: oklch(25.33% 0.016 252.42);
+  --color-base-200: rgba(255, 255, 255, 0.07);
+  --color-base-300: oklch(35.16% 0.0187 264.3);
+  --color-base-400: rgba(255, 255, 255, 0.25);
+  --color-base-content: oklch(93.4% 0 0);
+  --color-primary: oklch(43.48% 0.1938 262.51);
+  --color-primary-content: oklch(93.4% 0 0);
+  --color-secondary: oklch(16.1% 0.1116 264.05);
+  --color-secondary-content: oklch(93.4% 0 0);
+  --color-accent: oklch(62.8% 0.2577 29.23);
+  --color-accent-content: oklch(93.4% 0 0);
+  --color-neutral: oklch(43.48% 0.1938 262.51);
+  --color-neutral-content: oklch(93.4% 0 0);
+  --color-info: oklch(71.8% 0.1425 266.09);
+  --color-info-content: oklch(0% 0 0);
+  --color-success: rgba(255, 255, 255, 0.15);
+  --color-success-content: oklch(0% 0 0);
+  --color-warning: oklch(87.29% 0.1173 78.76);
+  --color-warning-content: oklch(0% 0 0);
+  --color-error: oklch(73.14% 0.1652 21.99);
+  --color-error-content: oklch(0% 0 0);
+  --radius-selector: 0.5rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.5rem;
+  --size-selector: 0.2rem;
+  --size-field: 0.1875rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+  --fontsize: .9rem;
+  --color-icon-subtle-gray: #6C6C6C;
+  --color-neutral-bg-50: rgba(255, 255, 255, 0.07);
+  --color-neutral-bg-100: rgba(255, 255, 255, 0.12);
+  --color-error-text: #FA6767;
+  --color-neutral-border-01: rgba(255, 255, 255, 0.15);
+  --color-error-border: #FA6767;
+}
